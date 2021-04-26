@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+<!-- Conteúdo -->
+{% block content %}
+<div
+  id="book-register-page"
+  class="container d-flex align-items-center justify-content-center flex-column"
+>
+  <h1 class="mb-4 text-blue text-center font-weight-bold">Livros</h1>
+  <!-- Formulário -->
+  <form method="POST" class="center-form" enctype="multipart/form-data">
+    <!-- Nome do livro -->
+    <input
+      id="title"
+      type="text"
+      name="title"
+      class="form-control my-4"
+      placeholder="Título do livro a ser cadastrado"
+      required
+    />
+
+    <!-- Imagem do livro -->
+    <input
+      id="book"
+      name="book"
+      type="file"
+      class="my-4 file-input"
+      accept="image/*"
+      required
+    />
+
+    <!-- Submit -->
+    <div class="text-center mt-4">
+      <button
+        id="cadastro"
+        type="submit"
+        class="btn form-btn medium-font-size font-weight-bold"
+      >
+        Enviar
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}

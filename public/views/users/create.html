@@ -1,0 +1,58 @@
+{% extends "home.html" %}
+
+<!-- Conteúdo -->
+{% block content %}
+<div
+  id="sign-up-page"
+  class="container d-flex justify-content-center align-items-center flex-column"
+>
+  <!-- Formulário de cadastro -->
+  <form class="center-form" method="POST">
+    <h1 class="text-blue text-center"><b>Cadastrar</b></h1>
+    <!-- Nome -->
+    <input
+      id="name"
+      type="text"
+      name="name"
+      placeholder="Nome"
+      class="form-control my-3 text-center"
+      required
+    />
+    <!-- Email -->
+    <input
+      id="email"
+      type="email"
+      name="email"
+      placeholder="Email"
+      class="form-control my-3 text-center"
+      required
+    />
+    <!-- Senha -->
+    <div class="d-flex my-3">
+      <input
+        id="senha"
+        type="password"
+        name="password"
+        placeholder="Senha"
+        class="form-control mr-3 text-center"
+        required
+      />
+      <input
+        id="confirmPassword"
+        type="password"
+        name="confirmPassword"
+        placeholder="Repita a senha"
+        class="form-control text-center"
+        required
+      />
+    </div>
+
+    <!-- Submit -->
+    <div class="text-center mt-5">
+      <button id="sign-up-btn" type="submit" class="btn form-btn">
+        <b>CADASTRAR</b>
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}

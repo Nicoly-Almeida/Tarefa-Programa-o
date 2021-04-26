@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+<!-- Conteúdo -->
+{% block content %}
+<div
+  id="login-page"
+  class="container d-flex align-items-center justify-content-center flex-column"
+>
+  <h1 class="text-blue text-center font-weight-bold">Login</h1>
+  <!-- Login -->
+  <form class="center-form" method="POST">
+    <!-- Email -->
+    <div class="form-row">
+      <input
+        id="email"
+        type="email"
+        name="email"
+        class="form-control text-center my-4 ml-0"
+        placeholder="Email"
+        required
+      />
+    </div>
+    <!-- Senha -->
+    <div class="form-row">
+      <input
+        id="senha"
+        type="password"
+        name="password"
+        class="form-control text-center ml-0"
+        placeholder="Senha"
+        required
+      />
+    </div>
+    <!-- Não possui conta? -->
+    <div class="text-center my-3">
+      <small class="form-text text-muted cadastro text-success">
+        Não possui uma conta?
+        <a href="/sign-up/" class="text-decoration-none text-blue">
+          Cadastre-se
+        </a>
+      </small>
+    </div>
+    <div class="text-center mt-4 pt-2 pb-2 mb-4">
+      <button type="submit" id="login-btn" class="btn form-btn">
+        <b>ENTRAR</b>
+      </button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
