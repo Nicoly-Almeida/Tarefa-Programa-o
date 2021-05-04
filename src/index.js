@@ -1,3 +1,6 @@
+const { resolve } = require("path");
+require('dotenv').config({ path: resolve(process.cwd(), 'src/.env') });
+const fs = require('fs');
 const express = require("express");
 const nunjucks = require("nunjucks");
 const cors = require("cors");
@@ -5,7 +8,6 @@ const routes = require("./routes");
 const session = require("express-session");
 const { authConfig } = require("./config");
 const { activeLocalSession } = require("./middlewares/auth");
-
 // Cria instância do express
 const app = express();
 
@@ -35,3 +37,5 @@ nunjucks.configure("public/views", {
   watch: true,
 });
 app.set("view engine", ".html");
+
+console.log(process.env.EMAIL_USER)

@@ -1,6 +1,9 @@
 const User = require("../db/models/User");
 const DB = require("../db/connection");
 const bcrypt = require("bcrypt");
+const mailController = require('./MailController');
+
+
 
 // Cadastro de usuários
 async function create(req, res) {
@@ -15,6 +18,8 @@ async function create(req, res) {
     password == confirmPassword
   ) {
     await User.create({ name, email, password });
+
+    await mailController.sendCreateUser(email);
 
     return res.redirect("/login");
   }
